@@ -1,0 +1,25 @@
+.Chat {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.Message {
+  width: 90%;
+  padding: 8px 24px;
+  border-radius: 16px;
+  font-size: 14px;
+
+  &[data-role="user"] {
+    align-self: flex-end;
+    background: light-dark(rgb(199, 237, 250), rgb(108, 178, 108));
+  }
+
+  &[data-role="assistant"] {
+    align-self: flex-start;
+    background: light-dark(lightgray, #303030);
+  }
+}
