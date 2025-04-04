@@ -1,10 +1,12 @@
-import styles from "./Header.module.css";
-
 export default function Header() {
   return (
-    <header className={styles.Header}>
-      <img className={styles.Logo} src="/chatbot.png" alt="chatbot-image" />
-      <h2 className={styles.Title}>聊天機器人</h2>
+    <header className="text-center">
+      <img
+        src="/chatbot.png"
+        alt="chatbot-image"
+        style={{ width: "80px", height: "80px" }}
+      />
+      <h3 className="m-0">聊天機器人</h3>
     </header>
   );
 }

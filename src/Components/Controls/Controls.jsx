@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
-import styles from "./Controls.module.css";
 
 export default function Controls({ onSend, isDisabled = false }) {
   const textareaRef = useRef(null);
@@ -29,13 +28,18 @@ export default function Controls({ onSend, isDisabled = false }) {
     }
   }
   return (
-    <div className={styles.Controls}>
-      <div className={styles.TextAreaContainer}>
+    <div className="d-flex align-items-center gap-2 w-100">
+      <div className="d-flex flex-grow-1 py-2 px-3 rounded-pill align-items-center bg-white shadow-lg">
         <TextareaAutosize
           ref={textareaRef}
-          className={styles.TextArea}
+          className="w-100 h-100 border-0 overflow-auto"
+          style={{
+            outline: "none",
+            resize: "none",
+          }}
           placeholder="請輸入訊息..."
           minRows={1}
+          maxRows={1}
           disabled={isDisabled}
           value={content}
           onChange={handleContentChange}
@@ -43,7 +47,12 @@ export default function Controls({ onSend, isDisabled = false }) {
         ></TextareaAutosize>
       </div>
       <button
-        className={styles.Button}
+        className="h-100 border-0 rounded-pill bg-warning shadow-lg"
+        style={{
+          width: "60px",
+          height: "50px",
+          outline: "none",
+        }}
         onClick={handleContentSend}
         disabled={isDisabled}
       >

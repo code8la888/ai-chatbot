@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { GoogleGenAI } from "@google/genai";
-import styles from "./App.module.css";
 import Loader from "./Components/Loader/Loader";
 import ChatContainer from "./Components/Chat/ChatContainer";
 import Header from "./Components/Header";
@@ -36,7 +35,7 @@ function App() {
   }
 
   return (
-    <div className={styles.App}>
+    <div className="d-flex flex-column align-items-center gap-3 vh-100 p-3">
       {isLoading && <Loader />}
       <Header />
       <ChatContainer messages={messages} />
