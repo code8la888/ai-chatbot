@@ -1,6 +1,9 @@
+import { useContext } from "react";
+import { ThemeContext } from "../../ThemeContext";
 import { useEffect, useRef } from "react";
 import Markdown from "react-markdown";
 export default function Chat({ messages }) {
+  const { themeColor } = useContext(ThemeContext);
   const messageEndRef = useRef(null);
   const WELCOME_MESSAGE = {
     role: "assistant",
@@ -18,9 +21,14 @@ export default function Chat({ messages }) {
             role == "user" ? "align-self-end" : "align-self-start"
           }`}
           style={{
-            backgroundColor: `${
-              role == "user" ? "#ffda6a" : "var(--bs-gray-300)"
-            }`,
+            backgroundColor:
+              role == "user"
+                ? themeColor == "light"
+                  ? "#ffda6a"
+                  : "var(--bs-primary-border-subtle)"
+                : themeColor == "light"
+                ? "var(--bs-secondary-bg-subtle)"
+                : "var(--bs-success-border-subtle)",
           }}
           key={index}
           data-role={role}

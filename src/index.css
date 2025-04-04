@@ -5,10 +5,7 @@
 body {
   margin: 0 auto;
   width: 100%;
-  max-width: 640px;
-  min-width: 360px;
   min-height: 100vh;
-  background-color: var(--bs-warning-bg-subtle);
 }
 
 p {
@@ -18,18 +15,11 @@ p {
 .Loader {
   width: 45px;
   aspect-ratio: 1;
-  --c: no-repeat linear-gradient(light-dark(#000, #ececec) 0 0);
+  --c: no-repeat linear-gradient(#000 0 0);
   background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
   background-size: 20% 100%;
   animation: l1 1s infinite linear;
 }
-
-@media (prefers-color-theme: dark) {
-  .LoaderWrapper {
-    opacity: 0.85;
-  }
-}
-
 @keyframes l1 {
   0% {
     background-size: 20% 100%, 20% 100%, 20% 100%;
